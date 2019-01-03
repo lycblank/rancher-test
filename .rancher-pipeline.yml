@@ -5,7 +5,7 @@ stages:
       image: golang:1.10.7
       shellScript: |-
         mkdir -p /go/src/rancher
-        ln -s `pwd` /go/src/rancher
+        ln -Fs `pwd` /go/src/rancher
         cd /go/src/rancher
         go build -o rancher-test
         go test -cover
