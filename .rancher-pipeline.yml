@@ -9,4 +9,12 @@ stages:
         cd /go/src/rancher
         go build -o rancher-test
         go test -cover
+- name: publish
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: 10.10.8.23:5000
 timeout: 60
