@@ -1,7 +1,1 @@
-stages:
-- name: build
-  steps:
-  - runScriptConfig:
-      image: golang1.10.7
-      shellScript: mkdir /go/src/github.com/rancher
 timeout: 60
