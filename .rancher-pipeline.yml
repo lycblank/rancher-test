@@ -2,6 +2,6 @@ stages:
 - name: build
   steps:
   - runScriptConfig:
-      image: golang1.10.7
+      image: golang:1.10.7
       shellScript: mkdir -p /go/src
 timeout: 60
