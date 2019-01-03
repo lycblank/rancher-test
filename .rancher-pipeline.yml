@@ -3,5 +3,10 @@ stages:
   steps:
   - runScriptConfig:
       image: golang:1.10.7
-      shellScript: mkdir -p /go/src
+      shellScript: |-
+        mkdir -p /go/src/github.com/rancher
+        ln -s `pwd` /go/src/github.com/rancher/rancher-test
+        cd /go/src/github.com/rancher/rancher-test
+        go build -o rancher-test
+        go test -cover
 timeout: 60
