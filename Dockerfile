@@ -2,7 +2,7 @@
 # necessary Golang tooling for building Go binaries.
 # Here I retrieve the `alpine`-based just for the 
 # convenience of using a tiny image.
-FROM golang:1.10.7 as builder
+FROM 10.10.8.23:5000/golang:1.10.7 as builder
 
 #RUN ls /etc/docker/daemon.json
 
