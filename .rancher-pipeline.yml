@@ -8,6 +8,7 @@ stages:
         cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
         echo "10.10.8.23 slg.registry.com" >> /etc/hosts
         cat /etc/hosts
+        openssl version -d
         #ls /etc/pki/tls
         #chmod 777 /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
         #cat certs/domain.crt >> /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
