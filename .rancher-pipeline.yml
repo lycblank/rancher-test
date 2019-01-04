@@ -28,6 +28,7 @@ stages:
       image: golang:1.10.7
       shellScript: |-
         cat /etc/hosts
+        ls /usr/share/ca-certificates/slg.registry.com.crt
         curl https://slg.registry.com/v2/_catalog
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
