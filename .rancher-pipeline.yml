@@ -1,9 +1,7 @@
 stages:
-- name: publish
+- name: build
   steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: ranche-test
-      registry: 127.0.0.1:34482
+  - runScriptConfig:
+      image: golang:1.10.7
+      shellScript: ls /etc/docker
 timeout: 60
