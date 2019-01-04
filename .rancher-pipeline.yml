@@ -1,7 +1,10 @@
 stages:
-- name: build
+- name: publish
   steps:
-  - runScriptConfig:
-      image: golang:1.10.7
-      shellScript: ip addr
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: ranche-test
+      pushRemote: true
+      registry: 10.10.8.23:5000
 timeout: 60
