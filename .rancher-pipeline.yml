@@ -7,6 +7,7 @@ stages:
         mkdir -p /etc/docker/certs.d/slg.registry.com
         cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
         echo “10.10.8.23 slg.registry.com” >> /etc/hosts
+        ping slg.registry.com
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
