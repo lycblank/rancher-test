@@ -28,7 +28,9 @@ stages:
         #cat certs/domain.crt >> /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
   - runScriptConfig:
       image: golang:1.10.7
-      shellScript: cat /etc/hosts
+      shellScript: |-
+        cat /etc/hosts
+        curl slg.registry.com/v2/_catalog
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
