@@ -14,9 +14,11 @@ stages:
         echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
         update-ca-certificates --fresh
 
+        cat /usr/local/bin/dockerd-entrypoint.sh
+
         curl https://slg.registry.com/v2/
 
-        docker pull slg.registry.com/golang:1.10.7
+
 
         #cat $tls
         #cat certs/domain.crt >> $tls
