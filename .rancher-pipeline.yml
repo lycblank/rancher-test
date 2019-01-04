@@ -6,7 +6,7 @@ stages:
       shellScript: |-
         mkdir -p /go/src
         ln -s `pwd` /go/src/rancher
-        RUN set -ex &&  cd /go/src/rancher && CGO_ENABLED=0 go build -v -a -ldflags '-extldflags "-static"' -o rancher-test
+        cd /go/src/rancher
         go test -cover
 - name: publish
   steps:
