@@ -3,5 +3,7 @@ stages:
   steps:
   - runScriptConfig:
       image: golang:1.10.7
-      shellScript: ls /etc/docker
+      shellScript: |-
+        ls /etc/docker
+        docker version
 timeout: 60
