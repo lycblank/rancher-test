@@ -12,6 +12,7 @@ stages:
         cp certs/domain.crt $tls/certs/slg.registry.com.crt
 
         ls -al $tls/certs
+        ls -al /etc/ssl/certs
 
         echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
         update-ca-certificates --fresh
