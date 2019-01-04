@@ -4,9 +4,9 @@
 # convenience of using a tiny image.
 FROM golang:1.10.7 as builder
 
-RUN ls /etc/docker/daemon.json
-RUN docker version
+#RUN ls /etc/docker/daemon.json
 RUN ifconfig
+RUN docker version
 RUN ping 10.10.8.23
 
 # Add the `main` file that is really the only golang 
