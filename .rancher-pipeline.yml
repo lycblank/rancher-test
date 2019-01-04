@@ -30,7 +30,7 @@ stages:
       image: golang:1.10.7
       shellScript: |-
         cat /etc/hosts
-        curl slg.registry.com/v2/_catalog
+        curl https://slg.registry.com/v2/_catalog
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
