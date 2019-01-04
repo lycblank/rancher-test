@@ -5,6 +5,5 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: ranche-test
-      pushRemote: true
       registry: 127.0.0.1:34482
 timeout: 60
