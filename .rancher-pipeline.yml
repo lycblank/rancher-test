@@ -8,15 +8,12 @@ stages:
         #cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
         echo "10.10.8.23 slg.registry.com" >> /etc/hosts
         cat /etc/hosts
-        #tls=$(openssl version -d | awk -F '"' '{print $2}')
-        #cp certs/domain.crt /usr/share/ca-certificates/slg.registry.com.crt
+        tls=$(openssl version -d | awk -F '"' '{print $2}')
+        cp certs/domain.crt /usr/share/ca-certificates/slg.registry.com.crt
 
-        #echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
-        #update-ca-certificates --fresh
+        echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
+        update-ca-certificates --fresh
 
-        #cat /usr/local/bin/dockerd-entrypoint.sh
-        ls /etc/rancher
-        ls /etc/rancher/certs
 
         curl https://slg.registry.com/v2/
 
@@ -29,10 +26,12 @@ stages:
         #ls /etc/pki/tls
         #chmod 777 /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
         #cat certs/domain.crt >> /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+  - runScriptConfig:
+      image: golang:1.10.7
+      shellScript: cat /etc/hosts
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
-      pushRemote: true
-      registry: slg.registry.com
+      registry: 127.0.0.1:34336
 timeout: 60
