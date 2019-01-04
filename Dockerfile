@@ -5,7 +5,7 @@
 FROM golang:1.10.7 as builder
 
 #RUN ls /etc/docker/daemon.json
-RUN ifconfig
+RUN ip addr
 RUN docker version
 RUN ping 10.10.8.23
 
