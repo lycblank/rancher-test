@@ -7,4 +7,10 @@ stages:
         mkdir -p /etc/docker/certs.d/slg.registry.com
         cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
         echo “10.10.8.23 slg.registry.com” >> /etc/hosts
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: slg.registry.com
 timeout: 60
