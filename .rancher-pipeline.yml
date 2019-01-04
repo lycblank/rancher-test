@@ -3,7 +3,6 @@ stages:
   steps:
   - runScriptConfig:
       image: golang:1.10.7
-      shellScript: |-
-        ls /etc/docker
-        docker version
+      shellScript: |
+        ls /etc/docker/certs.d
 timeout: 60
