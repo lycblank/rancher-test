@@ -14,7 +14,7 @@ stages:
         echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
         update-ca-certificates --fresh
 
-        cat /usr/local/bin/dockerd-entrypoint.sh
+        #cat /usr/local/bin/dockerd-entrypoint.sh
 
         curl https://slg.registry.com/v2/
 
