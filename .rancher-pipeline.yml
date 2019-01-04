@@ -14,7 +14,7 @@ stages:
         #echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
         #update-ca-certificates --fresh
 
-        curl https://slg.registry.com/v2/_catalog
+        curl https://10.10.8.23/v2/_catalog
 
 
         #cat $tls
