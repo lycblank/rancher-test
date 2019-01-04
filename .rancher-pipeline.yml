@@ -8,8 +8,11 @@ stages:
         cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
         echo "10.10.8.23 slg.registry.com" >> /etc/hosts
         cat /etc/hosts
-        tls=$(openssl version -d | awk -F '"' '{print $2}')/certs
-        ls -al $tls/
+        tls=$(openssl version -d | awk -F '"' '{print $2}')
+        cat /etc/ca-certificates.conf
+
+        #cp certs/domain.crt $tls/certs/slg.registry.com.crt
+
         #cat $tls
         #cat certs/domain.crt >> $tls
         #cat $tls
