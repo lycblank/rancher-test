@@ -4,15 +4,15 @@ stages:
   - runScriptConfig:
       image: golang:1.10.7
       shellScript: |-
-        mkdir -p /etc/docker/certs.d/slg.registry.com
-        cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
+        #mkdir -p /etc/docker/certs.d/slg.registry.com
+        #cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
         echo "10.10.8.23 slg.registry.com" >> /etc/hosts
         cat /etc/hosts
-        tls=$(openssl version -d | awk -F '"' '{print $2}')
-        cp certs/domain.crt /usr/share/ca-certificates/slg.registry.com.crt
+        #tls=$(openssl version -d | awk -F '"' '{print $2}')
+        #cp certs/domain.crt /usr/share/ca-certificates/slg.registry.com.crt
 
-        echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
-        update-ca-certificates --fresh
+        #echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
+        #update-ca-certificates --fresh
 
         #cat /usr/local/bin/dockerd-entrypoint.sh
 
