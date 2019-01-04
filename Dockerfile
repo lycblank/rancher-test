@@ -5,9 +5,6 @@
 FROM golang:1.10.7 as builder
 
 #RUN ls /etc/docker/daemon.json
-RUN ip addr
-RUN docker version
-RUN ping 10.10.8.23
 
 # Add the `main` file that is really the only golang 
 # file under the root directory that matters for the 
