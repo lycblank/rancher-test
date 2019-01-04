@@ -16,6 +16,8 @@ stages:
 
         curl https://slg.registry.com/v2/
 
+        docker pull slg.registry.com/golang:1.10.7
+
         #cat $tls
         #cat certs/domain.crt >> $tls
         #cat $tls
