@@ -3,6 +3,8 @@ stages:
   steps:
   - runScriptConfig:
       image: golang:1.10.7
-      shellScript: |
-        ls /etc/docker/certs.d
+      shellScript: |-
+        mkdir -p /etc/docker/certs.d/slg.registry.com
+        cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
+        echo “10.10.8.23 slg.registry.com” >> /etc/hosts
 timeout: 60
