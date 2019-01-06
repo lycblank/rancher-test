@@ -32,5 +32,6 @@ stages:
       tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34336
     env:
-      PLUGIN_INSECURE: "true"	
+      PLUGIN_INSECURE: "true"
+      PLUGIN_DEBUG: "true"
 timeout: 60
