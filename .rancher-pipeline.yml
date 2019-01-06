@@ -17,6 +17,7 @@ stages:
         curl https://slg.registry.com/v2/_catalog
 
         ping registry-dns
+        ping registry-dns
 
 
         #cat $tls
