@@ -14,7 +14,7 @@ stages:
         #echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
         #update-ca-certificates --fresh
 
-        curl https://registry.slg/v2/_catalog
+        #curl https://registry.slg/v2/_catalog
 
         #curl https://docker-registry/v2/_catalog
 
@@ -31,5 +31,5 @@ stages:
       buildContext: .
       tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34336
-      PLUGIN_INSECURE: true
+      plugin_insecure: true
 timeout: 60
