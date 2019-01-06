@@ -16,7 +16,7 @@ stages:
 
         #curl https://slg.registry.com/v2/_catalog
 
-        curl https://docker-registry/v2/_catalog
+        #curl https://docker-registry/v2/_catalog
 
 
         #cat $tls
