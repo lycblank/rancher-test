@@ -14,7 +14,7 @@ stages:
         #echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
         #update-ca-certificates --fresh
 
-        #curl https://slg.registry.com/v2/_catalog
+        curl https://registry.slg/v2/_catalog
 
         #curl https://docker-registry/v2/_catalog
 
