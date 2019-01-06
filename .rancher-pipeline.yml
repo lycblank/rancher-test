@@ -18,9 +18,6 @@ stages:
 
         curl https://registry.slg/v2/_catalog
 
-        ping registry-dns
-        ping registry-dns
-
 
         #cat $tls
         #cat certs/domain.crt >> $tls
