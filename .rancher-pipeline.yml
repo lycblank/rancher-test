@@ -30,8 +30,8 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
-      registry: 127.0.0.1:34336
+      registry: 192.168.1.98:5000
     env:
-      PLUGIN_INSECURE: "true"
       PLUGIN_DEBUG: "true"
+      PLUGIN_INSECURE: "true"
 timeout: 60
