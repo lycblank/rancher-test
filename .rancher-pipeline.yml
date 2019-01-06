@@ -15,8 +15,8 @@ stages:
         #update-ca-certificates --fresh
 
         #curl https://slg.registry.com/v2/_catalog
-        ping registry.slg
-        curl https://registry-dns/v2/_catalog
+
+        curl https://registry.slg/v2/_catalog
 
         ping registry-dns
         ping registry-dns
