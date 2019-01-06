@@ -15,7 +15,7 @@ stages:
         #update-ca-certificates --fresh
 
         #curl https://slg.registry.com/v2/_catalog
-        ping docker-registry
+        ping registry-dns.p-zpn7q-pipeline
         curl https://registry-dns/v2/_catalog
 
         ping registry-dns
