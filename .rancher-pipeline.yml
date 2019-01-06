@@ -31,5 +31,6 @@ stages:
       buildContext: .
       tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34336
-      plugin_insecure: true
+    env:
+      PLUGIN_INSECURE: "true"	
 timeout: 60
