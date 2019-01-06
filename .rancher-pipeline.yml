@@ -6,15 +6,15 @@ stages:
       shellScript: |-
         #mkdir -p /etc/docker/certs.d/slg.registry.com
         #cp certs/domain.crt /etc/docker/certs.d/slg.registry.com/ca.crt
-        echo "10.10.8.23 slg.registry.com" >> /etc/hosts
-        cat /etc/hosts
+        #echo "10.10.8.23 slg.registry.com" >> /etc/hosts
+        #cat /etc/hosts
         #tls=$(openssl version -d | awk -F '"' '{print $2}')
         #cp certs/domain.crt /usr/share/ca-certificates/slg.registry.com.crt
 
         #echo "slg.registry.com.crt" >> /etc/ca-certificates.conf
         #update-ca-certificates --fresh
 
-        curl https://slg.registry.com/v2/_catalog
+        #curl https://slg.registry.com/v2/_catalog
         curl https://registry-dns/v2/_catalog
 
         ping registry-dns
@@ -28,11 +28,6 @@ stages:
         #ls /etc/pki/tls
         #chmod 777 /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
         #cat certs/domain.crt >> /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
-  - runScriptConfig:
-      image: golang:1.10.7
-      shellScript: |-
-        cat /etc/hosts
-        curl https://slg.registry.com/v2/_catalog
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
