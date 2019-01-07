@@ -18,7 +18,7 @@ metadata:
   labels:
     app: rancher-test
 spec:
-  replicas: 1
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 1
