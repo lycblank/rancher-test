@@ -32,11 +32,12 @@ spec:
       labels:
         app: rancher-test
     spec:
-      imagePullSecrets:
-      - name: slg-registry
+#      imagePullSecrets:
+#      - name: slg-registry
       containers:
       - name: rancher-test
-        image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+  #      image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+        image: registry.slg:5000/${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
         ports:
         - containerPort: 8088
           hostPort: 7088
