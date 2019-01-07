@@ -20,8 +20,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: rancher-test
+#    matchLabels:
+#      app: rancher-test
   template:
     metadata:
       labels:
