@@ -6,7 +6,7 @@ stages:
       buildContext: .
       tag: rancher-test:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: 10.10.8.23:5000
+      registry: registry.slg:5000
     env:
       PLUGIN_DEBUG: "true"
       PLUGIN_INSECURE: "true"
