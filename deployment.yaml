@@ -38,3 +38,4 @@ spec:
         image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
         ports:
         - containerPort: 8088
+          hostPort: 7088
