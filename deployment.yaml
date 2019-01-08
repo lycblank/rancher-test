@@ -10,7 +10,7 @@ spec:
     - protocol: TCP
       port: 8086
       targetPort: 8088
-      nodePort: 30000
+  #    nodePort: 30000
   externalIPs:
     - 10.10.8.23
 ---
