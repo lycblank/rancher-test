@@ -2,7 +2,7 @@
 # necessary Golang tooling for building Go binaries.
 # Here I retrieve the `alpine`-based just for the 
 # convenience of using a tiny image.
-FROM registry.slg:5000/golang:1.10.7 as builder
+FROM registry.com:5000/golang:1.10.7 as builder
 
 #RUN ls /etc/docker/daemon.json
 
@@ -41,7 +41,7 @@ RUN set -ex && \
 # allowing us to start with a fat build image and end up with 
 # a very small runtime image. Another common option is using 
 # `alpine` so that the end image also has a package manager.
-FROM registry.slg:5000/busybox
+FROM registry.com:5000/busybox
 
 # Retrieve the binary from the previous stage
 COPY --from=builder /usr/bin/rancher-test /usr/local/bin/rancher-test
